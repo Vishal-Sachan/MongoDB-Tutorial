@@ -9,4 +9,4 @@ const carSchema = new mongoose.Schema({
     active: Boolean,
     price: Number,
 });
-module.exports=mongoose.model("Cars", carSchema);
+module.exports=mongoose.model("cars", carSchema);
