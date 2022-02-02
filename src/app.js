@@ -80,24 +80,26 @@ app.get("/cars",
   }
 });
 
-app.get("/cars/active=:id", (req, res) => {
-  cars.find({ active: req.params.id }, (err, data) => {
-    if (err) {
-      console.log("can't fetch");
-    } else {
+app.get("/cars/active=:id", 
+  async(req, res) => {
+    try{
+      const data= await cars.find({ active: req.params.id });
       res.send(data);
     }
-  });
+    catch(err){
+      console.log(err);
+    }
 });
 
-app.get("/cars/name=:id", (req, res) => {
-  cars.find({ name: req.params.id }, (err, data) => {
-    if (err) {
-      console.log("can't fetch");
-    } else {
+app.get("/cars/name=:id",
+  async(req, res) => {
+    try{
+      const data= await cars.find({ name: req.params.id });
       res.send(data);
     }
-  });
+    catch(err){
+      console.log(err);
+    }
 });
 
 app.listen(port, () => {
