@@ -27,7 +27,6 @@ async(req,res)=>{
     console.log(response);
     res.json({
       status:"Created Successfully"
-      
     })
   }
   catch(err){
@@ -43,7 +42,6 @@ async(req,res)=>{
     console.log(response);
     res.json({
       status:"Updated Successfully"
-      
     })
   }
   catch(err){
@@ -63,7 +61,6 @@ async(req,res)=>{
   }
   catch(err){
     console.log(err);
-    
   }
 })
 
