@@ -26,7 +26,7 @@ async(req,res)=>{
     const response= await cars.create(car);
     console.log(response);
     res.json({
-      status:"ok"
+      status:"Created Successfully"
       
     })
   }
@@ -42,7 +42,7 @@ async(req,res)=>{
     const response= await cars.updateOne({name:updateCar.name},{$set:{type:updateCar.type}});
     console.log(response);
     res.json({
-      status:"ok"
+      status:"Updated Successfully"
       
     })
   }
@@ -58,9 +58,7 @@ async(req,res)=>{
     const response= await cars.deleteOne({model:deleteCar.model});
     console.log(response);
     res.json({
-      status:"ok",
-      deleted:`${deleteCar.name}`
-      
+      status:"Deleted Successfully",      
     })
   }
   catch(err){
